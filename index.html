@@ -58,6 +58,10 @@
         padding: 8px;
       }
       
+      #textin {
+        font-size:20px;
+      }
+      
     </style>
     
   </head>
@@ -84,12 +88,14 @@
       
       <div id="usersearch">
         <hr>
-	      <br>
         <ul>
-          <li><a>SocialStatser</a></li>
+          <li><a id="textin">Home</a></li>
+          <li><a id="textin">About</a></li>
+          <li><a id="textin">Credits</a></li>
           <li><a><input placeholder="Username ID Search" id="usernamein"></a></li>
           <li><a><button onclick="searchusers()">Search</button></a></li>
         </ul>
+        <hr>
         
         <!-- Search Output -->
         
@@ -123,7 +129,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("output").innerHTML = "<br><hr><br>";
+            document.getElementById("output").innerHTML = "<br><br>";
             document.getElementById("output").innerHTML += "<img src = \"" + JSON.parse(xhttp.responseText).data.profile_picture + "\">";
             document.getElementById("output").innerHTML += "<h3>" + JSON.parse(xhttp.responseText).data.username; + "</h3>";
             document.getElementById("output").innerHTML += "<h5>" + JSON.parse(xhttp.responseText).data.full_name; + "</h5>";
