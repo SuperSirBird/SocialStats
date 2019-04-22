@@ -42,6 +42,22 @@
         color:grey;
       }
       
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        padding: 8px;
+      }
+      
     </style>
     
   </head>
@@ -67,13 +83,13 @@
       <!-- User search -->
       
       <div id="usersearch">
-        <br> <br> <br>
-        <h1>Social Statser</h1>
-        <h3>Private Instagram Server</h3>
-        <br>
-        <input placeholder="Username ID Search" id="usernamein"> <br> <br>
-        <button onclick="searchusers()">Search</button> <br>
-        <br>
+        <hr>
+	      <br>
+        <ul>
+          <li><a>SocialStatser</a></li>
+          <li><a><input placeholder="Username ID Search" id="usernamein"></a></li>
+          <li><a><button onclick="searchusers()">Search</button></a></li>
+        </ul>
         
         <!-- Search Output -->
         
