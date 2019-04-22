@@ -76,7 +76,7 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
 		        document.getElementById("output").innerHTML = "<br><hr><br>";
-            document.getElementById("output").innerHTML += "<img src = \"" + JSON.parse(xhttp.responseText).data.profile_picture; + "\">";
+            document.getElementById("output").innerHTML += "<img src = \"" + JSON.parse(xhttp.responseText).data.profile_picture + "\">";
             document.getElementById("output").innerHTML += "<h3>" + JSON.parse(xhttp.responseText).data.username; + "</h3>";
           }
         };
