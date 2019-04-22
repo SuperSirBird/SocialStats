@@ -38,6 +38,10 @@
         border-radius: 50%;
       }
       
+      h5,h6 {
+        color:grey;
+      }
+      
     </style>
     
   </head>
@@ -103,9 +107,13 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-		        document.getElementById("output").innerHTML = "<br><hr><br>";
+            document.getElementById("output").innerHTML = "<br><hr><br>";
             document.getElementById("output").innerHTML += "<img src = \"" + JSON.parse(xhttp.responseText).data.profile_picture + "\">";
             document.getElementById("output").innerHTML += "<h3>" + JSON.parse(xhttp.responseText).data.username; + "</h3>";
+            document.getElementById("output").innerHTML += "<h5>" + JSON.parse(xhttp.responseText).data.full_name; + "</h5>";
+            document.getElementById("output").innerHTML += "<hr style='width:80px;'>";
+            document.getElementById("output").innerHTML += "<h5>" + JSON.parse(xhttp.responseText).data.bio; + "</h5>";
+            document.getElementById("output").innerHTML += "<hr style='width:80px;'>";
           }
         };
         xhttp.open("GET", "https://api.instagram.com/v1/users/" + usernameid + "?access_token=" + apitoken, true);
