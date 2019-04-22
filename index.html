@@ -45,29 +45,57 @@
   <body>
 	  <center>
       
-      <!-- Form Input -->
+      <!-- Login Screen -->
       
-      <br>
-      <h1>Social Statser</h1>
-      <h3>Private Instagram Server</h3>
-      <br>
-      <input placeholder="Enter Access Token!" id="tokenr"> <br> <br>
-      <input placeholder="Username ID Search" id="usernamein"> <br> <br>
-      <button onclick="searchusers()">Search</button> <br>
-      <br>
-      
-      <!-- Search Output -->
-      
-      <div id="output">
+      <div id="loginscreen">
+        
+        <!-- Get API Token -->
+        
+        <br> <br> <br>
+        <h1>Social Statser</h1>
+        <h3>Private Instagram Server</h3>
+        <br>
+        <input placeholder="Enter Access Token!" id="tokenr"> <br> <br>
+        <button onclick="login()">Login!</button>
+          
       </div>
       
+      <!-- User search -->
+      
+      <div id="usersearch">
+        <br> <br> <br>
+        <h1>Social Statser</h1>
+        <h3>Private Instagram Server</h3>
+        <br>
+        <input placeholder="Username ID Search" id="usernamein"> <br> <br>
+        <button onclick="searchusers()">Search</button> <br>
+        <br>
+        
+        <!-- Search Output -->
+        
+        <div id="output"></div>
+      
+      </div>
+
     </center>
     
     <script>
       
       // Script
+      
+      var apitoken;
+      
+      document.getElementById("loginscreen").style.display = "block";
+      document.getElementById("usersearch").style.display = "none";
+      
+      
+      function login() {
+        apitoken = document.getElementById("tokenr").value;
+        document.getElementById("usersearch").style.display = "block";
+        document.getElementById("loginscreen").style.display = "none";
+      }
+      
       function searchusers() {
-        var apitoken = document.getElementById("tokenr").value;
         var usernameid = document.getElementById("usernamein").value;
         
         // search
