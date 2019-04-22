@@ -1,41 +1,51 @@
 <html>
   <head>
-    <title>Social Statser</title>
+    <title>SocialStatser</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Private Instagram">
+    <meta name="keywords" content="Instagram">
+    <meta name="author" content="Super Sir Bird">
+    
+    <style>
+      
+      body {
+        margin:0px;
+      }
+      input {
+        padding:6px;
+        border-radius: 4px;
+        border: 2px solid grey;
+      }
+      button {
+        text-decoration: none;
+        padding:6px;
+        border-radius: 4px;
+        border: 2px solid grey;
+      }
+      
+    </style>
+    
   </head>
   <body>
-    <h1>Social Statser</h1>
-    <input placeholder="Enter Access Token" id="tokenr"> <br>
-    <input placeholder="Username"> <br>
-    <button onclick="searchusers()">Search</button>
-    
-    <div id="outputthing">
-    </div>
-	  <ul id="rudr_instafeed"></ul>
+	  <center>
+      
+      <br>
+      <h1>Social Statser</h1>
+      <h3>Private Instagram Server</h3>
+      <br>
+      <input placeholder="Enter Access Token!" id="tokenr"> <br>
+      <input placeholder="Username Search"> <br>
+      <button onclick="searchusers()">Search</button>
+      <br>
+      <div id="output">
+      </div>
+      
+    </center>
     
     <script>
-      function searchusers() {
-        //var xhttp = new XMLHttpRequest();
-        //xhttp.onreadystatechange = function() {
-        //  if (this.readyState == 4 && this.status == 200) {
-        //    document.getElementById("outputthing").innerHTML = xhttp.responseText;
-        //  }
-        //};
-        //xhttp.open("GET", "https://api.instagram.com/v1/self/media/recent?access_token=" + document.getElementById("tokenr").value, true);
-        //xhttp.send();
-        var token = document.getElementById("tokenr").value,
-    num_photos = 10, // maximum 20
-    container = document.getElementById( 'rudr_instafeed' ), // it is our <ul id="rudr_instafeed">
-    scrElement = document.createElement( 'script' );
- 
-window.mishaProcessResult = function( data ) {
-	for( x in data.data ){
-		container.innerHTML += '<li><img src="' + data.data[x].images.low_resolution.url + '"></li>';
-	}
-}
- 
-scrElement.setAttribute( 'src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + num_photos + '&callback=mishaProcessResult' );
-document.body.appendChild( scrElement );
-      }
+      
+      // Script
+      
     </script>
   </body>
 </html>
