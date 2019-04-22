@@ -111,9 +111,9 @@
             document.getElementById("output").innerHTML += "<img src = \"" + JSON.parse(xhttp.responseText).data.profile_picture + "\">";
             document.getElementById("output").innerHTML += "<h3>" + JSON.parse(xhttp.responseText).data.username; + "</h3>";
             document.getElementById("output").innerHTML += "<h5>" + JSON.parse(xhttp.responseText).data.full_name; + "</h5>";
-            document.getElementById("output").innerHTML += "<hr style='width:80px;'>";
+            document.getElementById("output").innerHTML += "<hr style='width:300px;'>";
             document.getElementById("output").innerHTML += "<h5>" + JSON.parse(xhttp.responseText).data.bio; + "</h5>";
-            document.getElementById("output").innerHTML += "<hr style='width:80px;'>";
+            document.getElementById("output").innerHTML += "<hr style='width:300px;'>";
           }
         };
         xhttp.open("GET", "https://api.instagram.com/v1/users/" + usernameid + "?access_token=" + apitoken, true);
