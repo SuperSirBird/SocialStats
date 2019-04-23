@@ -159,13 +159,19 @@
             var importtable = " \
             <table> \
               <tr> \
-                <th width=166px style='text-align:left;'>Posts: <span></span></th> \
-                <th width=166px style='text-align:center;'>Followers: <span></span></th> \
-                <th width=166px style='text-align:right;'>Following: <span></span></th>\
+                <th width=166px style='text-align:left;' >Posts: <span id='posts'>0</span></th> \
+                <th width=166px style='text-align:center;' >Followers: <span id='followers'>0</span></th> \
+                <th width=166px style='text-align:right;' >Following: <span id='following'>0</span></th>\
               </tr> \
             </table> ";
             
             document.getElementById("output").innerHTML += importtable;
+		        
+            // set
+            
+            document.getElementById("posts").innerHTML = JSON.parse(xhttp.responseText).data.counts.media;
+            document.getElementById("followers").innerHTML = JSON.parse(xhttp.responseText).data.counts.followed_by;
+            document.getElementById("following").innerHTML = JSON.parse(xhttp.responseText).data.counts.follows;
             
             
           }
