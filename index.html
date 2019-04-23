@@ -104,8 +104,7 @@
         <hr>
         <ul>
 		      <li><a><img src="SocialStatserLogo.png" width=42px id="iconlogo"></a></li>
-          <li><a id="textin">Feed</a></li>
-          <li><a id="textin">Profile</a></li>
+          <li><a id="textin">Analytics</a></li>
           <li><a id="textin">About</a></li>
           <li><a id="textin">Update Log</a></li>
           <li><a id="textin">Credits</a></li>
@@ -156,7 +155,7 @@
             
             // Posts, followers, following
             
-            var importtable = " \
+            var importtable = "<br> \
             <table> \
               <tr> \
                 <th width=166px style='text-align:left;' >Posts: <span id='posts'>0</span></th> \
@@ -172,7 +171,6 @@
             document.getElementById("posts").innerHTML = JSON.parse(xhttp.responseText).data.counts.media;
             document.getElementById("followers").innerHTML = JSON.parse(xhttp.responseText).data.counts.followed_by;
             document.getElementById("following").innerHTML = JSON.parse(xhttp.responseText).data.counts.follows;
-            
             
           }
         };
