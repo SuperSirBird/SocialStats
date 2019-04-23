@@ -98,13 +98,13 @@
           
       </div>
       
-      <!-- User search -->
+      <!-- User search/Navigation Bar -->
       
       <div id="usersearch">
         <hr>
         <ul>
 		      <li><a><img src="SocialStatserLogo.png" width=42px id="iconlogo"></a></li>
-          <li><a id="textin">Analytics</a></li>
+          <li><a id="textin" onclick="login()">Analytics</a></li>
           <li><a id="textin">About</a></li>
           <li><a id="textin">Update Log</a></li>
           <li><a id="textin">Credits</a></li>
@@ -118,6 +118,14 @@
         <div id="output"></div>
       
       </div>
+      
+      <!-- Analytics -->
+      
+      <div id="analytics">
+        <br>
+        <br>
+        Loading Analytics...
+      </div>
 
     </center>
     
@@ -129,16 +137,25 @@
       
       document.getElementById("loginscreen").style.display = "block";
       document.getElementById("usersearch").style.display = "none";
+      document.getElementById("analytics").style.display = "none";
       
       
-      function login() {
+      function login() { // Instant Login Screen
         apitoken = document.getElementById("tokenr").value;
         document.getElementById("usersearch").style.display = "block";
         document.getElementById("loginscreen").style.display = "none";
+        document.getElementById("analytics").style.display = "block";
+      }
+      
+      function search() { // Search Screen
+        document.getElementById("usersearch").style.display = "block";
+        document.getElementById("loginscreen").style.display = "none";
+        document.getElementById("analytics").style.display = "none";
       }
       
       function searchusers() {
         var usernameid = document.getElementById("usernamein").value;
+        search();
         
         // search
         
