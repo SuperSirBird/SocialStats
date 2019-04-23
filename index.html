@@ -152,6 +152,21 @@
             document.getElementById("output").innerHTML += "<hr style='width:300px;'>";
             document.getElementById("output").innerHTML += "<h5>" + JSON.parse(xhttp.responseText).data.bio; + "</h5>";
             document.getElementById("output").innerHTML += "<hr style='width:300px;'>";
+            
+            // Posts, followers, following
+            
+            var importtable = " \
+            <table> \
+              <tr> \
+                <th width=200px style='text-align:left;'>Posts: <span></span></th> \
+                <th width=200px style='text-align:center;'>Followers: <span></span></th> \
+                <th width=200px style='text-align:right;'>Following: <span></span></th>\
+              </tr> \
+            </table> ";
+            
+            document.getElementById("output").innerHTML += importtable;
+            
+            
           }
         };
         xhttp.open("GET", "https://api.instagram.com/v1/users/" + usernameid + "?access_token=" + apitoken, true);
